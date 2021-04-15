@@ -15,6 +15,7 @@ class Solution{
 			else {
 				minheap.add(current);
 			}
+			minheap.add(earliest);
 		}
 		return minheap.size();
 	}
