@@ -25,6 +25,7 @@ class Solution {
         }
         boolean foundPartition = canPartition(nums, index + 1, sum, total, state) 
         || canPartition( nums, index + 1, sum + nums[index], total, state );
+        state.put(current, foundPartition);
             return foundPartition;
     }
 }
