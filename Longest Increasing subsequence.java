@@ -10,11 +10,11 @@ public class Solution {
             int maxval = 0;
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
-                    maxval = Math.max(maxval, dp[j]);
-                }
+                    maxval = Math.max(maxval, dp[j]);  //local traverse high value check
+                }									
             }
-            dp[i] = maxval + 1;
-            maxans = Math.max(maxans, dp[i]);
+            dp[i] = maxval + 1;     // and add if applies from previous to + 1 
+            maxans = Math.max(maxans, dp[i]); //final ans comparision 
         }
         return maxans;
     }
