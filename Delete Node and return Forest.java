@@ -31,10 +31,10 @@ class Solution {
         if(root ==null){
             return null;
         }
-        root.left = removenodes(root.left, delete, result);    //Recurse if the childs present for adding nodes in result
-        root.right = removenodes(root.right, delete, result); //Recurse if the childs present for adding nodes in result
+        root.left = removenodes(root.left, delete, result);    // store null while recurseing and adding children
+        root.right = removenodes(root.right, delete, result); 
         if(delete.contains(root.val)){
-            if(root.left!=null){
+            if(root.left!=null){            //check for end or changed value
                 result.add(root.left);
             }
             if(root.right!=null){
