@@ -14,7 +14,8 @@ class Solution {
             return;
         }
         for( int i = index; i< candidates.length; i++){
-            if( i == index || candidates[i]!=candidates[i-1]){
+            if( i == index || candidates[i]!=candidates[i-1]){  //candidate check so we don't add same subset. 
+                                                                //i==index so every new inplace value is added in subset
                 current.add(candidates[i]);
                 findcombination(candidates, i+1, target - candidates[i], current, result); 
                 current.remove(current.size()-1);  //Removing to allow other numbers to parse and find if they form a subset
