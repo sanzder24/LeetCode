@@ -9,10 +9,10 @@ class Solution {
         int max =1;
         while( j<tree.length ) {
             if(map.size() <=2) {
-                map.put(tree[j], j++);
+                map.put(tree[j], j++); //j for pointer to locate last occurence
             }
             if(map.size()>2) {
-                int min =tree.length-1;
+                int min =tree.length-1; //initial high value
                 for( int value: map.values()) {     
                 min = Math.min(min, value);
                 }
