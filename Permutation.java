@@ -13,7 +13,7 @@ class Solution {
             for (List<Integer> eachList : result) {
                 for (int i = 0; i <= eachList.size(); i++) {
                     List<Integer> newList = new ArrayList<>(eachList);
-                    newList.add(i, nums[index]);
+                    newList.add(i, nums[index]); //places the number in all possible places ->
                     
                     newResult.add(newList);
                 }
@@ -23,3 +23,8 @@ class Solution {
             return backtracking(nums, index + 1, result);
         }
 }
+/*
+System.out.println(result)
+[[1]]
+[[2, 1], [1, 2]
+[[3, 2, 1], [2, 3, 1], [2, 1, 3], [3, 1, 2], [1, 3, 2], [1, 2, 3]] */
