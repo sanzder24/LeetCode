@@ -5,7 +5,8 @@ class Solution {
             if (!(nums[i] <= nums[i + 1])) {
                 if (count > 0)
                     return false;
-                if (i - 1 >= 0 && i + 2 < nums.length && (nums[i] > nums[i + 2] && nums[i + 1] < nums[i - 1])){ //see Note
+                if (i - 1 >= 0 && i + 2 < nums.length && (nums[i] > nums[i + 2] 
+                && nums[i + 1] < nums[i - 1])){ //see Note, also two conditions failed so false
                     System.out.println(i);
                     return false;
 
