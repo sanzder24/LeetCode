@@ -7,7 +7,8 @@ class Solution {
         charValue[0] = 0;
         charValue['e'-'a'] = 1;
         charValue['i'-'a'] = 2;
-        charValue['o'-'a'] = 3;charValue['u'-'a'] = 4;
+        charValue['o'-'a'] = 3;
+        charValue['u'-'a'] = 4;
         Integer[][] dp = new Integer[n+1][5];
         int count = 0;
         for(char ch : arr){
