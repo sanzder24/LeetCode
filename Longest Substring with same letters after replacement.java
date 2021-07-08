@@ -26,3 +26,6 @@ class CharacterReplacement {
     System.out.println(CharacterReplacement.findLength("abccde", 1));
   }
 }
+
+T: O(N)
+S: O(26) - O(1)
