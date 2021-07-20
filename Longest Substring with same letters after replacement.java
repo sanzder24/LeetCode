@@ -17,7 +17,7 @@ class CharacterReplacement {
       maxLength = Math.max(maxLength, windowEnd - ws + 1);
     }
 
-    return maxLength;ws
+    return maxLength;
   }
 
   public static void main(String[] args) {

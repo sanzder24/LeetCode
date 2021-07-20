@@ -4,9 +4,9 @@ class Solution {
         int i =0, x=0, y=0;
         for(int j=0; j<instructions.length(); j++){
             if(instructions.charAt(j)=='L'){
-            i= (i+1)%4; //since 4 is the size and out of bound check
+             i= (i+1)%4; //since 4 is the size and out of bound check
             } else if (instructions.charAt(j)=='R'){
-            i= (i+3)%4;
+               i= (i+3)%4;
             } else {
                 x = x + direction[i][0];
                 y = y + direction[i][1];
