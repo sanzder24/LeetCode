@@ -1,33 +1,12 @@
 class Solution {
-    public int numSplits(String s) {
-        int[] right = new  int[26];
-        int[] left = new int[26];
-        int goodsplit =0;
-        for( int i =0; i < s.length(); i++){
-            char c = s.charAt(i);
-            right[ c - 'a']++;
+        public int numSplits(String s) {
+        int rc[] = new int[26], lc[] = new int[26], l = 0, r = 0, res = 0;
+        for (char c : s.toCharArray()) if (rc[c - 'a']++ == 0) r++;
+        for (char c : s.toCharArray()) {
+            if (lc[c - 'a']++ == 0) l++;
+            if (--rc[c - 'a'] == 0) r--;
+            if (l == r) res++;
         }
-        for( int j = 0; j < s.length(); j++){
-            char c = s.charAt(j);
-            left[ c - 'a']++;
-            right[ c - 'a']--;
-            
-            int left_check= get_distinct(left);
-            int right_check= get_distinct(right);
-            
-            if(left_check == right_check){
-            goodsplit++;
-            }
-        }
-        return goodsplit;
-    }
-    int get_distinct(int[] num){
-        int c=0;
-        for(int i: num){
-            if(i!=0){
-                c++;
-            }
-        }
-        return c;
+        return res;
     }
 }
