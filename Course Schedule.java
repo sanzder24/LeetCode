@@ -9,8 +9,8 @@ public class Solution {
             graph[i] = new ArrayList();
             
         for(int i=0; i<prerequisites.length;i++){
-            degree[prerequisites[i][1]]++;
-            graph[prerequisites[i][0]].add(prerequisites[i][1]); //build dependancy 
+            degree[prerequisites[i][0]]++;
+            graph[prerequisites[i][1]].add(prerequisites[i][0]); //build dependancy 
         }
         for(int i=0; i<degree.length;i++){
             if(degree[i] == 0){ // point 1
@@ -36,5 +36,3 @@ public class Solution {
             return false;
     }
 }
-Note: 
-1. Start with course with which is not a prerequisite for other courses. 
