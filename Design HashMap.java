@@ -19,7 +19,19 @@ class MyHashMap
 		else 
 			prev.next.val = value;
 	}
-
+	private ListNode findElement(int index, int key)
+	{
+		if(nodes[index] == null)
+			return nodes[index] = new ListNode(-1, -1);
+        
+        ListNode prev = nodes[index];
+		
+		while(prev.next != null && prev.next.key != key)
+		{
+			prev = prev.next;
+		}
+		return prev;
+	}
 	public void remove(int key)
 	{
 		int index = getIndex(key);
@@ -34,19 +46,7 @@ class MyHashMap
 		return Integer.hashCode(key) % nodes.length;
 	}
 
-	private ListNode findElement(int index, int key)
-	{
-		if(nodes[index] == null)
-			return nodes[index] = new ListNode(-1, -1);
-        
-        ListNode prev = nodes[index];
-		
-		while(prev.next != null && prev.next.key != key)
-		{
-			prev = prev.next;
-		}
-		return prev;
-	}
+
 
 	private static class ListNode
 	{
