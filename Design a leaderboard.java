@@ -2,9 +2,9 @@ class Leaderboard {
         Map<Integer, Integer> scores = new TreeMap<>(Comparator.reverseOrder()), players = new HashMap<>();
 
         public void addScore(int playerId, int score) {
+                scores.put(oldScore, scores.get(oldScore) - 1);
             int oldScore = players.getOrDefault(playerId, 0), newScore = oldScore + score;
             if (oldScore > 0)
-                scores.put(oldScore, scores.get(oldScore) - 1);
             players.put(playerId, newScore);
             scores.put(newScore, scores.getOrDefault(newScore, 0) + 1);
         }
