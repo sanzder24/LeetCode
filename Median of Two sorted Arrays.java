@@ -16,6 +16,6 @@ class Solution {
         
         if ((nums1.length + nums2.length)%2 == 1) 
             return val/1.0;
-        return (val + prevVal) / 2.0; 
+        return (val + prevVal) / 2.0;
     }
 }
