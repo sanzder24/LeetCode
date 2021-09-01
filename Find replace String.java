@@ -11,3 +11,30 @@ class Solution {
         return S;
     }
 }
+class Solution {
+    public String findReplaceString(String s, int[] indices, String[] sources, String[] targets) {
+        int n = s.length();
+        int[] matches = new int[n];
+        Arrays.fill(matches, -1);
+
+        for (int i = 0; i < indices.length; i++) {
+            int index = indices[i];
+            if (s.substring(index, index+ sources[i].length()).equals(sources[i])) {
+                matches[index] = i;
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        int index = 0;
+        while (index < n) {
+            if (matches[index] >= 0) {
+                result.append(targets[matches[index]]);
+                index += sources[matches[index]].length();
+            } else {
+                result.append(s.charAt(index++));
+            }
+        }
+
+        return result.toString();
+    }
+}
