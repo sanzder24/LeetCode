@@ -5,7 +5,7 @@ class Solution{
 	public static List<String> Longest(List<String> words, String str){
 		List<String> result = new ArrayList<>();
 		Collections.sort(words,(a ,b)-> b.length() - a.length());
-		bfs(result, words, 0);
+		bfs(result, words, 0, str);
 		return result;
 	}
 	public void bfs(List<String> result, List<String> words, int index, String str){
